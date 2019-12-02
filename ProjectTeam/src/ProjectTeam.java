@@ -241,7 +241,7 @@ public class ProjectTeam {
                         gameInfo(conn);
                         break;
                     case 3:
-                        // coachInfo(conn);
+                        coachInfo(conn);
                         break;
                     case 4:
                         done = true;
@@ -332,6 +332,26 @@ public class ProjectTeam {
                     ? "Win (" + rset.getString(2) + " - " + rset.getString(3) + ")"
                     : "Loss (" + rset.getString(3) + " - " + rset.getString(2) + ")";
             System.out.println("vs " + rset.getString(4) + ". " + result);
+        }
+
+        stmt.close();
+    }
+
+    private static void coachInfo(Connection conn) throws SQLException, IOException {
+        System.out.println("Enter Coach name: ");
+        Scanner console = new Scanner(System.in);
+        String coachName = console.next();
+
+        Statement stmt = conn.createStatement();
+        String query = "Select teamName from Coach c" +
+                " join Team t on c.CteamID = t.teamID" +
+                " join Person p on c.CSSN = p.SSN" +
+                " where p.firstName = '" + coachName + "' or p.lastName = '"+ coachName + "';";
+
+        System.out.println("Team coached");
+        ResultSet rset = stmt.executeQuery(query);
+        while(rset.next()){
+            System.out.println(rset.getString(1));
         }
 
         stmt.close();
