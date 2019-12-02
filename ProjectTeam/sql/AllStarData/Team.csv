@@ -1,0 +1,11 @@
+teamID,teamName,gamesWon,gamesLost,universityName,teamRank
+1,Seahawks,9,0,Uni of A,1
+2,Cougars,8,1,Uni of B,2
+3,Badgers,7,2,Uni of C,3
+4,Levins,6,3,Uni of D,4
+5,Riots,5,4,Uni of E,5
+6,Eagles,4,5,Uni of F,6
+7,Bears,3,6,Uni of G,7
+8,Badgers,2,7,Uni of H,8
+9,Packers,1,8,Uni of I,9
+10,Slugs,0,9,Uni of J,10
